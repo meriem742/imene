@@ -1,0 +1,383 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&display=swap');
+
+/* =========================
+   ROOT COLORS
+========================= */
+:root{
+  --black-bg: #0b0b0b;
+  --black-soft: #111;
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --white-soft: #f5f5f5;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Jost', sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: var(--black-bg);
+  color: var(--white-soft);
+}
+
+/* =========================
+   HEADER
+========================= */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;                 /* 🔥 نحدّو الارتفاع */
+  padding: 0 10%;               /* 🔥 نحيّو padding العمودي */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid var(--gold);
+}
+
+
+.logo img{
+  max-width: 120px;
+}
+
+.navmenu{
+  display: flex;
+}
+
+.navmenu a{
+  color: var(--gold);
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: 0.4s;
+}
+
+.navmenu a:hover{
+  color: var(--gold-light);
+}
+
+.nav-icon i{
+  margin-right: 20px;
+  font-size: 24px;
+  color: var(--gold);
+}
+
+#menu-icon{
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--gold);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+  padding: 80px 10%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.main-home{
+  width: 100%;
+  height: 100vh;
+  background-image: url(./images/banner.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+/* MAIN TITLE (BRUSH STYLE) */
+.main-text h1{
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 80px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-shadow: 0 0 18px rgba ;
+  position: relative;
+}
+
+.main-text h1::after{
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.main-text p{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #cfcfcf;
+  font-style: italic;
+}
+
+/* BUTTON */
+.main-btn{
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  border-radius: 30px;
+  transition: 0.4s;
+}
+
+.main-btn:hover{
+  background: var(--gold);
+  color: #000;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+.center-text h2,
+.up-center-text h2,
+.reviews h3{
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  color: var(--gold-light);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+.products{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 2rem;
+}
+
+.product-card{
+  background: var(--black-soft);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+  position: relative;
+}
+
+.product-card img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* FAVORITE ICON */
+.fav-icon{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #000;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.fav-icon i{
+  color: var(--gold);
+  font-size: 20px;
+}
+
+/* PRODUCT TEXT */
+.product-title{
+  font-size: 22px;
+  margin: 15px 0;
+  color: var(--gold);
+}
+
+.product-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--gold-light);
+}
+
+.view-btn{
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: 0.4s;
+}
+
+.view-btn:hover{
+  background: var(--gold);
+  color: #000;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact{
+  background: #0f0f0f;
+}
+.contact-info h4{
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.contact-info p{
+  color: #bdbdbd;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.end-text{
+  background: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+.end-text p{
+  color: var(--gold);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+  .products{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .main-text h1{
+    font-size: 55px;
+  }
+}
+
+@media(max-width:600px){
+  .products{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= SECTION TITLES ================= */
+h2,h3{
+  font-family:'Great Vibes',cursive;
+  font-size:55px;
+  color:var(--gold-light);
+  text-align:center;
+  text-shadow:0 0 20px rgba(245,215,110,.6);
+}
+
+.main-home{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  overflow: hidden;
+}
+
+/* النص فوق */
+.main-text{
+  position: relative;
+  z-index: 5;
+  max-width: 600px;
+}
+
+/* صورة التمثال */
+.art-logo{
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.45;              /* خفيفة */
+  z-index: 1;
+  pointer-events: none;
+  font-size: 0;
+}
+
+.art-logo img{
+  width: 1200px;
+  max-width: 40vw;
+
+  /* تحويل اللون لذهبي */
+  filter:
+    sepia(1)
+    hue-rotate(20deg)
+    saturate(3)
+    brightness(1.1)
+    drop-shadow(0 0 18px rgba(212,175,55,0.4))
+    drop-shadow(0 0 45px rgba(212,175,55,0.2));
+}
+
+
+.brand-title{
+  font-family: 'Cinzel Decorative', serif; /* نفس AUTHENTIC */
+  font-size: 48px; /* صغريها أو كبريها حسب المكان */
+  color: #d4af37; /* ذهبي */
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 6px rgba(212,175,55,0.6),
+    0 0 18px rgba(212,175,55,0.5),
+    0 0 35px rgba(212,175,55,0.3);
+}
+
+/* النقطة */
+.brand-title .dot{
+  color: #f5d76e;
+}
+
+
+/* ===== توسيط عناصر Contact ===== */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.first-info {
+    text-align: center;
+}
+
+/* ===== تغيير ألوان الحقول فقط ===== */
+.second-info input,
+.second-info textarea {
+    background-color: #fff7d6;           /* ذهبي فاتح */
+    border: 2px solid #d4af37;           /* إطار ذهبي */
+    border-radius: 12px;                 /* دائرية خفيفة */
+    box-shadow: 0 0 8px rgba(212,175,55,0.6);
+    outline: none;
+}
+
+/* عند التركيز */
+.second-info input:focus,
+.second-info textarea:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 14px rgba(212,175,55,0.9);
+}
+
+/* ===== زر الإرسال (تغيير لون فقط) ===== */
+.view-btn {
+    background-color: #d4af37;
+    color: #000;
+}
+

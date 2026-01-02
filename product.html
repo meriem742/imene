@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details</title>
+
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<style>
+.product-page{
+  padding: 30px;
+  background: #0b0b0b;
+  color: #f5f5f5;
+}
+
+/* عنوان المنتج */
+.product-page h1{
+  font-size: 36px;
+  font-family: 'Cinzel Decorative', serif;
+  color: #d4af37;
+  text-shadow:
+    0 0 8px rgba(212,175,55,0.5),
+    0 0 20px rgba(212,175,55,0.3);
+}
+
+/* السعر */
+.price-big{
+  font-size: 28px;
+  color: #f5d76e;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+/* زر الشراء */
+.btn-primary{
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  border-radius: 30px;
+  font-size: 18px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(212,175,55,0.35);
+}
+
+.btn-primary:hover{
+  background: #d4af37;
+  color: #000;
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.8),
+    0 0 50px rgba(212,175,55,0.5);
+}
+
+/* زر ثانوي */
+.btn-outline{
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid #f5d76e;
+  color: #f5d76e;
+  border-radius: 30px;
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-outline:hover{
+  background: rgba(245,215,110,0.15);
+  color: #d4af37;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="product-page">
+
+  <model-viewer id="model"
+    auto-rotate
+    camera-controls
+    style="width:100%; height:350px; background:#f5f5f5; border-radius:12px;">
+  </model-viewer>
+
+  <h1 id="name"></h1>
+  <div class="price-big" id="price"></div>
+
+  <p>
+    Authentic historical artifact. Carefully preserved and verified.
+  </p>
+
+ <button class="btn-primary" onclick="orderNow()">
+  Order Now
+</button>
+
+  <button class="btn-outline" onclick="addToWishlist()">
+  Add to Wishlist
+</button>
+
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("name").textContent = params.get("name");
+document.getElementById("price").textContent = params.get("price") + " DA";
+document.getElementById("model").src = "./models/" + params.get("model");
+</script>
+
+<script>
+function addToWishlist() {
+  const params = new URLSearchParams(window.location.search);
+
+  const product = {
+    name: params.get("name"),
+    price: params.get("price"),
+    model: params.get("model")
+  };
+
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  const exists = wishlist.some(item => item.name === product.name);
+
+  if (!exists) {
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    alert("✅ Added to Wishlist!");
+  } else {
+    alert("❤️ Already in Wishlist!");
+  }
+}
+</script>
+
+<script>
+function orderNow() {
+  const params = new URLSearchParams(window.location.search);
+
+  const order = {
+    name: params.get("name"),
+    price: params.get("price"),
+    date: new Date().toLocaleString()
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  alert(
+    "🛒 Order Confirmed!\n\n" +
+    "Product: " + order.name + "\n" +
+    "Price: " + order.price + " DA"
+  );
+}
+</script>
+
+</body>
+</html>
