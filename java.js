@@ -21,3 +21,33 @@ menu.onclick = () => {
 function toggleFav(el){
   el.classList.toggle("active");
 }
+
+document.querySelectorAll(".interactive-model").forEach(model => {
+
+  let isOpen = false;
+
+  // نوقف أي animation كي يتشحن الموديل
+  model.addEventListener("load", () => {
+    model.pause();
+    model.currentTime = 0;
+  });
+
+  // بالكليك: نشغّل الأنيميشن
+  model.addEventListener("click", () => {
+    if (!isOpen) {
+      model.currentTime = 0;
+      model.playbackRate = 1;
+      model.play();
+      isOpen = true;
+    } else {
+      model.currentTime = model.duration;
+      model.playbackRate = -1;
+      model.play();
+      isOpen = false;
+    }
+  });
+
+});
+
+
+
