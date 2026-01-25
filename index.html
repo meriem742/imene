@@ -7,13 +7,15 @@
   <title>Antiques Marketplace</title>
 
   <link rel="stylesheet" href="style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
 
-  <!-- MODEL VIEWER -->
+  <!-- ✅ MODEL VIEWER -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
@@ -21,67 +23,323 @@
 
 <header>
   <div class="brand-title">Artie<span class="dot">.</span></div>
-  <ul class="navmenu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="collections.html">Collections</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+
+ <ul class="navmenu">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="collections.html">Collections</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+
+  <div class="nav-icon">
+    <a href="#"><i class="bx bx-search"></i></a>
+    <a href="#"><i class="bx bx-user"></i></a>
+    <a href="#"><i class="bx bx-cart"></i></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </div>
 </header>
 
-<!-- PRODUCTS -->
-<section class="trending-product">
-  <div class="products">
+<!-- HERO -->
+<section class="main-home">
+  <div class="art-logo">
+  <img src="images/statue-head.png" alt="">
+</div>
+  <div class="main-text">
+    
+    <h1>Authentic <br>Historical Artifacts</h1>
+    <p>Rare pieces from ancient civilizations</p>
 
-    <!-- PRODUCT 1 -->
-    <div class="row product-card">
-      <model-viewer auto-rotate camera-controls
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
-        <source src="models/vase.glb" type="model/gltf-binary">
-      </model-viewer>
-
-      <h4>Roman Sculpted Clay Vessel</h4>
-      <span>25000 DA</span>
-    </div>
-
-    <!-- PRODUCT 2 -->
-    <div class="row product-card">
-      <model-viewer auto-rotate camera-controls
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
-        <source src="models/2018.281_peacock_table_lamp.glb" type="model/gltf-binary">
-      </model-viewer>
-
-      <h4>Ancient Ornate Chalice</h4>
-      <span>36000 DA</span>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="row product-card">
-      <model-viewer camera-controls
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
-        <source src="models/1949.15_covered_tureen_terrine_du_roi.glb" type="model/gltf-binary">
-      </model-viewer>
-
-      <h4>Ornamental Relic Coffer</h4>
-      <span>246000 DA</span>
-    </div>
-
-    <!-- PRODUCT 4 -->
-    <div class="row product-card">
-      <model-viewer camera-controls autoplay
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
-        <source src="models/1966.362_clock.glb" type="model/gltf-binary">
-      </model-viewer>
-
-      <h4>Antique Architectural Vase</h4>
-      <span>242000 DA</span>
-    </div>
-
+    <a href="collections.html" class="main-btn">
+      Explore Antiques <i class="bx bx-right-arrow-alt"></i>
+    </a>
   </div>
+  <div class="art-logo">
+    <img src="/images/statue-head.png" alt="">
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="trending-product" id="trending">
+  <div class="center-text">
+    <h2>Antiques <span>For Sale</span></h2>
+  </div>
+
+  <div class="products">
+<!-- 1 -->
+    <div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    src="https://raw.githack.com/meriem742/imene/main/models/vase.glb"
+    auto-rotate
+    camera-controls
+    style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Roman Sculpted Clay Vessel</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">25000 DA</span>
+
+    <a href="product.html?name=Roman Sculpted Clay Vessel&price=25000&model=vase.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+ </div>
+
+<!--2--->
+  <div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    src="https://raw.githack.com/meriem742/imene/main/models/2018.281_peacock_table_lamp.glb"
+    auto-rotate
+    camera-controls
+    style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Ancient Ornate Chalice</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">36000 DA</span>
+
+    <a href="product.html?name=Ancient Ornate Chalice&price=36000&model=2018.281_peacock_table_lamp.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+<!--3--->
+   <div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    class="interactive-model"
+    src="https://raw.githack.com/meriem742/imene/main/models/1949.15_covered_tureen_terrine_du_roi.glb"
+    camera-controls
+    animation-name="Lid Animation"
+    style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor:pointer;">
+  </model-viewer>
+ 
+
+  <!-- Product info -->
+  <h4 class="product-title">Ornamental Relic Coffer</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">246000 DA</span>
+
+    <a href="product.html?name=Ornamental Relic Coffer&price=246000&model=1949.15_covered_tureen_terrine_du_roi.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+<!--4--->
+<div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    class="interactive-model"
+    src="https://raw.githack.com/meriem742/imene/main/models/1966.362_clock.glb"
+    camera-controls
+  animation-name="Action"
+  autoplay
+  style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor: pointer;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Antique Architectural Vase</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">242000 DA</span>
+
+    <a href="product.html?name=Antique Architectural Vase&price=242000&model=1966.362_clock.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+
+
+    
+ <!--5--->
+<div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    class="interactive-model"
+    src="https://raw.githack.com/meriem742/imene/main/models/vintage_clock.glb"
+    camera-controls
+    animation-name="Animation"
+    autoplay
+    style="width:100%; height:300px; background:#f5f5f5; border-radius:12px;cursor: pointer;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Ancient Nobleman’s Timepiece</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">256700 DA</span>
+
+    <a href="product.html?name=Ancient Nobleman’s Timepiece&price=256700&model=vintage_clock.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+
+
+<!--6--->
+
+<div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+   class="interactive-model"
+   src="https://raw.githack.com/meriem742/imene/main/models/vintage_lamp.glb"
+   camera-controls
+   animation-name="Action"
+   
+   style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor: pointer;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Bronze Filigree Sanctuary <br> Chalice</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">903400 DA</span>
+
+    <a href="product.html?name=Bronze Filigree Sanctuary Chalice&price=903400&model=vintage_lamp.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+
+<!--7--->
+
+
+<div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+   
+   class="interactive-model"
+   src="https://raw.githack.com/meriem742/imene/main/models/vintage_gramophone_game-asset_by_rigdhi.glb"
+   camera-controls
+   animation-name="Armature|ArmatureAction"
+  
+   style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor: pointer;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Ornate Phonographic Reliquary</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">250000 DA</span>
+
+    <a href="product.html?name=Ornate Phonographic Reliquary&price=250000&model=vintage_gramophone_game-asset_by_rigdhi.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+<!--8--->
+
+
+<div class="row product-card">
+
+  <!-- Favorite icon -->
+  <div class="fav-icon" onclick="toggleFav(this)">
+    <i class="bx bx-heart"></i>
+  </div>
+
+  <!-- 3D Model -->
+  <model-viewer
+    class="interactive-model"
+    src="https://raw.githack.com/meriem742/imene/main/models/2020.215_pair_of_guardian_figures_zuishin.glb"
+    camera-controls
+    animation-name="Figure Assembly"
+  
+    style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor: pointer;">
+  </model-viewer>
+
+  <!-- Product info -->
+  <h4 class="product-title">Antique <br> Protective <br> Figurines</h4>
+
+  <div class="product-bottom">
+    <span class="product-price">360500 DA</span>
+
+    <a href="product.html?name=Antique Protective Figurines&price=360500&model=2020.215_pair_of_guardian_figures_zuishin.glb"
+       class="view-btn">
+       View Details
+    </a>
+  </div>
+
+</div>
+
+
+</div>
+
+    
+
 </section>
 
 <div class="end-text">
   <p>© 2025 Antiques Marketplace – Educational Project</p>
 </div>
 
+<script src="java.js"></script>
 </body>
 </html>
