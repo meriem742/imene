@@ -26,132 +26,56 @@
     <li><a href="collections.html">Collections</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div class="nav-icon">
-    <a href="#"><i class="bx bx-search"></i></a>
-    <a href="#"><i class="bx bx-user"></i></a>
-    <a href="#"><i class="bx bx-cart"></i></a>
-    <div class="bx bx-menu" id="menu-icon"></div>
-  </div>
 </header>
 
-<!-- HERO -->
-<section class="main-home">
-  <div class="art-logo">
-    <img src="images/statue-head.png" alt="">
-  </div>
-
-  <div class="main-text">
-    <h1>Authentic <br>Historical Artifacts</h1>
-    <p>Rare pieces from ancient civilizations</p>
-    <a href="collections.html" class="main-btn">
-      Explore Antiques <i class="bx bx-right-arrow-alt"></i>
-    </a>
-  </div>
-
-  <div class="art-logo">
-    <img src="images/statue-head.png" alt="">
-  </div>
-</section>
-
 <!-- PRODUCTS -->
-<section class="trending-product" id="trending">
-  <div class="center-text">
-    <h2>Antiques <span>For Sale</span></h2>
-  </div>
-
+<section class="trending-product">
   <div class="products">
 
     <!-- PRODUCT 1 -->
     <div class="row product-card">
-      <div class="fav-icon" onclick="toggleFav(this)">
-        <i class="bx bx-heart"></i>
-      </div>
-
-      <model-viewer
-        src="models/vase.glb"
-        auto-rotate
-        camera-controls
+      <model-viewer auto-rotate camera-controls
         style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+        <source src="models/vase.glb" type="model/gltf-binary">
       </model-viewer>
 
-      <h4 class="product-title">Roman Sculpted Clay Vessel</h4>
-      <div class="product-bottom">
-        <span class="product-price">25000 DA</span>
-        <a href="product.html?name=Roman Sculpted Clay Vessel&price=25000&model=vase.glb" class="view-btn">
-          View Details
-        </a>
-      </div>
+      <h4>Roman Sculpted Clay Vessel</h4>
+      <span>25000 DA</span>
     </div>
 
     <!-- PRODUCT 2 -->
     <div class="row product-card">
-      <div class="fav-icon" onclick="toggleFav(this)">
-        <i class="bx bx-heart"></i>
-      </div>
-
-      <model-viewer
-        src="models/2018.281_peacock_table_lamp.glb"
-        auto-rotate
-        camera-controls
+      <model-viewer auto-rotate camera-controls
         style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+        <source src="models/2018.281_peacock_table_lamp.glb" type="model/gltf-binary">
       </model-viewer>
 
-      <h4 class="product-title">Ancient Ornate Chalice</h4>
-      <div class="product-bottom">
-        <span class="product-price">36000 DA</span>
-        <a href="product.html?name=Ancient Ornate Chalice&price=36000&model=2018.281_peacock_table_lamp.glb" class="view-btn">
-          View Details
-        </a>
-      </div>
+      <h4>Ancient Ornate Chalice</h4>
+      <span>36000 DA</span>
     </div>
 
     <!-- PRODUCT 3 -->
     <div class="row product-card">
-      <div class="fav-icon" onclick="toggleFav(this)">
-        <i class="bx bx-heart"></i>
-      </div>
-
-      <model-viewer
-        src="models/1949.15_covered_tureen_terrine_du_roi.glb"
-        camera-controls
-        animation-name="Lid Animation"
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor:pointer;">
+      <model-viewer camera-controls
+        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+        <source src="models/1949.15_covered_tureen_terrine_du_roi.glb" type="model/gltf-binary">
       </model-viewer>
 
-      <h4 class="product-title">Ornamental Relic Coffer</h4>
-      <div class="product-bottom">
-        <span class="product-price">246000 DA</span>
-        <a href="product.html?name=Ornamental Relic Coffer&price=246000&model=1949.15_covered_tureen_terrine_du_roi.glb" class="view-btn">
-          View Details
-        </a>
-      </div>
+      <h4>Ornamental Relic Coffer</h4>
+      <span>246000 DA</span>
     </div>
 
     <!-- PRODUCT 4 -->
     <div class="row product-card">
-      <div class="fav-icon" onclick="toggleFav(this)">
-        <i class="bx bx-heart"></i>
-      </div>
-
-      <model-viewer
-        src="models/1966.362_clock.glb"
-        camera-controls
-        animation-name="Action"
-        autoplay
-        style="width:100%; height:300px; background:#f5f5f5; border-radius:12px; cursor:pointer;">
+      <model-viewer camera-controls autoplay
+        style="width:100%; height:300px; background:#f5f5f5; border-radius:15px;">
+        <source src="models/1966.362_clock.glb" type="model/gltf-binary">
       </model-viewer>
 
-      <h4 class="product-title">Antique Architectural Vase</h4>
-      <div class="product-bottom">
-        <span class="product-price">242000 DA</span>
-        <a href="product.html?name=Antique Architectural Vase&price=242000&model=1966.362_clock.glb" class="view-btn">
-          View Details
-        </a>
-      </div>
+      <h4>Antique Architectural Vase</h4>
+      <span>242000 DA</span>
     </div>
 
-    <!-- كمّلي بنفس الطريقة لباقي المنتجات -->
-    
   </div>
 </section>
 
@@ -159,6 +83,5 @@
   <p>© 2025 Antiques Marketplace – Educational Project</p>
 </div>
 
-<script src="java.js"></script>
 </body>
 </html>
